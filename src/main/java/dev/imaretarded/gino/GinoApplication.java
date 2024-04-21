@@ -13,7 +13,13 @@ public class GinoApplication {
     }
 
     @GetMapping("/")
-    public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
+    public String index(@RequestParam(value = "name", defaultValue = "World") String name) {
       return String.format("Hello %s!", name);
     }
+
+    @GetMapping("/product")
+    public String detail(@RequestParam(value = "id") String id) {
+      return String.format("product %s", id);
+    }
+
 }
